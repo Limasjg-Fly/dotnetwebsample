@@ -1,0 +1,9 @@
+name: .NET TEMPLATE
+on:
+  pull_request:
+    branches: [ "main"]
+  workflow_dispatch:  
+  
+jobs:
+  build:
+    uses: ./.github/workflows/dotnet-default.yml  
