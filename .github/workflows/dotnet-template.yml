@@ -1,9 +1,0 @@
-name: .NET TEMPLATE
-on:
-  pull_request:
-    branches: [ "main"]
-  workflow_dispatch:  
-  
-jobs:
-  build:
-    uses: Limasjg-Fly/.github/.github/workflows/dotnet-default.yml@main
