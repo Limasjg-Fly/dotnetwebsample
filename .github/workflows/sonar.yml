@@ -1,4 +1,4 @@
-name: Sonar
+name: Sonar Old
 on:
   workflow_dispatch:
   
