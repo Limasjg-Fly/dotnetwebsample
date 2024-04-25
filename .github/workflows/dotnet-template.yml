@@ -2,15 +2,12 @@ name: .NET TEMPLATE
 on:
   pull_request:
     branches: [ "main"]
-  workflow_dispatch:
-
+  workflow_dispatch:  
+  
 jobs:
   quality:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run reusable workflow from Repo A
-        uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
-        with:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#  build:
+#   uses: Limasjg-Fly/.github/.github/workflows/dotnet-default.yml@main
