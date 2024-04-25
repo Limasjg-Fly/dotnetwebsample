@@ -7,7 +7,7 @@ on:
 jobs:
   quality:
     uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
-    secrets:
+    with:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 #  build:
 #   uses: Limasjg-Fly/.github/.github/workflows/dotnet-default.yml@main
