@@ -8,7 +8,8 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
+      - name: Set secret as environment variable
+        run: |
+          echo "SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}" >> $GITHUB_ENV
       - name: Chamando o Workflow Reutilizável de A
         uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
-        with:
-          sonar_token: ${{ secrets.SONAR_TOKEN }}
