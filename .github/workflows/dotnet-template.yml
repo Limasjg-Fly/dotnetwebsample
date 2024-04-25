@@ -5,11 +5,12 @@ on:
   workflow_dispatch:  
   
 jobs:
-  quality:
+  my_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Set secret as environment variable
-        run: |
-          echo "SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}" >> $GITHUB_ENV
-      - name: Chamando o Workflow Reutilizável de A
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run reusable workflow from Repo A
         uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
+        with:
+          sonar_token: ${{ secrets.Sonar_token }}
