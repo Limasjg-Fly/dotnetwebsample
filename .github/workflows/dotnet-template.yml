@@ -6,8 +6,9 @@ on:
   
 jobs:
   quality:
-    uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
-    with:
-      sonar_token: ${{ env.SONAR_TOKEN }}
-#  build:
-#   uses: Limasjg-Fly/.github/.github/workflows/dotnet-default.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chamando o Workflow Reutilizável de A
+        uses: Limasjg-Fly/.github/.github/workflows/sonar-default.yml@main
+        with:
+          sonar_token: ${{ secrets.SONAR_TOKEN }}
